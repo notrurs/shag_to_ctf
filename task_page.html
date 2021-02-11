@@ -1,0 +1,211 @@
+<!--s3cr3t c0de: flag{mr_robot_is_not_real}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shag_ctf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/task_page.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <span class="main_title"></span>
+    </div>
+</header>
+<!--
+   SSSSSSSSSSSSSSS HHHHHHHHH     HHHHHHHHH               AAA                  GGGGGGGGGGGGG
+ SS:::::::::::::::SH:::::::H     H:::::::H              A:::A              GGG::::::::::::G
+S:::::SSSSSS::::::SH:::::::H     H:::::::H             A:::::A           GG:::::::::::::::G
+S:::::S     SSSSSSSHH::::::H     H::::::HH            A:::::::A         G:::::GGGGGGGG::::G
+S:::::S              H:::::H     H:::::H             A:::::::::A       G:::::G       GGGGGG
+S:::::S              H:::::H     H:::::H            A:::::A:::::A     G:::::G
+ S::::SSSS           H::::::HHHHH::::::H           A:::::A A:::::A    G:::::G
+  SS::::::SSSSS      H:::::::::::::::::H          A:::::A   A:::::A   G:::::G    GGGGGGGGGG
+    SSS::::::::SS    H:::::::::::::::::H         A:::::A     A:::::A  G:::::G    G::::::::G
+       SSSSSS::::S   H::::::HHHHH::::::H        A:::::AAAAAAAAA:::::A G:::::G    GGGGG::::G
+            S:::::S  H:::::H     H:::::H       A:::::::::::::::::::::AG:::::G        G::::G
+            S:::::S  H:::::H     H:::::H      A:::::AAAAAAAAAAAAA:::::AG:::::G       G::::G
+SSSSSSS     S:::::SHH::::::H     H::::::HH   A:::::A             A:::::AG:::::GGGGGGGG::::G
+S::::::SSSSSS:::::SH:::::::H     H:::::::H  A:::::A               A:::::AGG:::::::::::::::G
+S:::::::::::::::SS H:::::::H     H:::::::H A:::::A                 A:::::A GGG::::::GGG:::G
+ SSSSSSSSSSSSSSS   HHHHHHHHH     HHHHHHHHHAAAAAAA                   AAAAAAA   GGGGGG   GGGG
+-->
+<div class="d-flex flex-column justify-content-center align-content-around main-block" id="main-block">
+    <div class="d-flex flex-row justify-content-around mb-5">
+        <!--Task 1-->
+        <div class="d-flex flex-column align-items-center p-2 simple_text" id="block_task1">
+            <h4>Нужно смотреть в оба</h4>
+            <input class="task_input mb-3" type="text" id="input_task1">
+            <div class="d-flex flex-row justify-content-evenly w-50">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#modalTask1">Подробнее</button>
+                <button class="btn" id="task1">Сдать</button>
+            </div>
+        </div>
+        <!--Task 2-->
+        <div class="d-flex flex-column align-items-center p-2 simple_text"  id="block_task2">
+            <h4>База, ответьте, прием</h4>
+            <input class="task_input mb-3" type="text" id="input_task2">
+            <div class="d-flex flex-row justify-content-evenly w-50">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#modalTask2">Подробнее</button>
+                <button class="btn" id="task2">Сдать</button>
+            </div>
+        </div>
+        <!--Task 3-->
+        <div class="d-flex flex-column align-items-center p-2 simple_text" id="block_task3">
+            <h4>Грубая сила</h4>
+            <input class="task_input mb-3" type="text" id="input_task3">
+            <div class="d-flex flex-row justify-content-evenly w-50">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#modalTask3">Подробнее</button>
+                <button class="btn" id="task3">Сдать</button>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-around">
+        <!--Task 4-->
+        <div class="d-flex flex-column align-items-center p-2 simple_text"  id="block_task4">
+            <h4>пип пип пип</h4>
+            <input class="task_input mb-3" type="text" id="input_task4">
+            <div class="d-flex flex-row justify-content-evenly w-50">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#modalTask4">Подробнее</button>
+                <button class="btn" id="task4">Сдать</button>
+            </div>
+        </div>
+        <!--Task 5-->
+        <div class="d-flex flex-column align-items-center p-2 simple_text"  id="block_task5">
+            <h4>Подозрительный тип</h4>
+            <input class="task_input mb-3" type="text" id="input_task5">
+            <div class="d-flex flex-row justify-content-evenly w-50">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#modalTask5">Подробнее</button>
+                <button class="btn" id="task5">Сдать</button>
+            </div>
+        </div>
+        <!--Task 6-->
+        <div class="d-flex flex-column align-items-center p-2 simple_text"  id="block_task6">
+            <h4>Проще простого</h4>
+            <input class="task_input mb-3" type="text" id="input_task6">
+            <div class="d-flex flex-row justify-content-evenly w-50">
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#modalTask6">Подробнее</button>
+                <button class="btn" id="task6">Сдать</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for task 1-->
+<div class="modal" tabindex="-1" id="modalTask1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Нужно смотреть в обa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Где-то на этом сайте скрыт секретный код доступа. Можешь посмотреть исходный код и найти его? Используй для этого Ctrl+U.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for task 2-->
+<div class="modal" tabindex="-1" id="modalTask2">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">База, ответьте, прием</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>У нас есть этот <a href="resources/mr.%20Anderson.txt" download>файл</a>, но сейчас ни у кого нет времени с ним разбираться. Поможешь? <a href="https://base64.guru/converter" target="_bnk">Это</a> может помочь тебе.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for task 3-->
+<div class="modal" tabindex="-1" id="modalTask3">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Грубая сила</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Кто-то оставил <a href="admin_panel.html" target="_blank">админскую панель</a> от роутера открытой в сети. Осталось подобрать логин и пароль. Судя по админке, она довольно старая, поэтому и доступы должны быть простыми.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for task 4-->
+<div class="modal" tabindex="-1" id="modalTask4">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">пип пип пип</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Мы перехватили какой-то сигнал и превратили его в картинку. Помоги декодировать, возможно <a href="images/morse_table.png" download="">это</a> поможет тебе.</p>
+                <img src="images/morse_task.png" class="mx-auto d-block">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for task 5-->
+<div class="modal" tabindex="-1" id="modalTask5">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Подозрительный тип</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Нашли личный <a href="server_bardoki.html" target="_blank">файловый сервер</a> предполагаемого иностранного хакера. Нужно получить к нему доступ и скачать от туда всё, что будет.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for task 6-->
+<div class="modal" tabindex="-1" id="modalTask6">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Проще простого</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Мы получили вот такое сообщение: zfua{4p3_w3m4l}. Похоже оно зашифровано. Держи <a href="https://rot13.com/" target="_blank">расшифровальщик</a> и попробуй узнать, что же там на самом деле.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script src="js/terminal.js"></script>
+<script src="js/js.js"></script>
+</body>
+</html>
